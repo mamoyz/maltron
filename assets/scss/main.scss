@@ -1,22 +1,4 @@
 @font-face {
-	font-family: "Inconsolata";
-	src: url("../fonts/Inconsolata-ExtraBold.eot");
-	src: url("../fonts/Inconsolata-ExtraBold.eot?#iefix") format("embedded-opentype"), url("../fonts/Inconsolata-ExtraBold.woff2") format("woff2"), url("../fonts/Inconsolata-ExtraBold.woff") format("woff"), url("../fonts/Inconsolata-ExtraBold.ttf") format("truetype"), url("../fonts/Inconsolata-ExtraBold.svg#Inconsolata-ExtraBold") format("svg");
-	font-weight: bold;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Inconsolata";
-	src: url("../fonts/Inconsolata-Medium.eot");
-	src: url("../fonts/Inconsolata-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/Inconsolata-Medium.woff2") format("woff2"), url("../fonts/Inconsolata-Medium.woff") format("woff"), url("../fonts/Inconsolata-Medium.ttf") format("truetype"), url("../fonts/Inconsolata-Medium.svg#Inconsolata-Medium") format("svg");
-	font-weight: 500;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
 	font-family: "Lemon";
 	src: url("../fonts/lemonmilk-bold-webfont.eot");
 	src: url("../fonts/lemonmilk-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/lemonmilk-bold-webfont.woff2") format("woff2"), url("../fonts/lemonmilk-bold-webfont.woff") format("woff"), url("../fonts/lemonmilk-bold-webfont.ttf") format("truetype");
@@ -24,15 +6,27 @@
 	font-style: normal;
 	font-display: swap;
 }
-
+@import "animations";
 body {
 	padding: 0;
 	margin: 0;
-	font-family: "Inconsolata", sans-serif;
+	font-family: "Inconsolata", monospace;
 	font-size: 29px;
 	line-height: 38px;
 	color: #180e01;
 	font-weight: 500;
+}
+section {
+	opacity: 0;
+}
+body {
+	&.ready {
+		section {
+			transition: 2s all 2s;
+
+			opacity: 1;
+		}
+	}
 }
 * {
 	box-sizing: border-box;

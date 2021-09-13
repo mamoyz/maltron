@@ -1,0 +1,87 @@
+.intro {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #000;
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	svg {
+		width: 300px;
+		height: 300px;
+		#border {
+			transform: rotate(0);
+			transform-origin: 52.6% 52.6%;
+		}
+		#mark {
+			transform: translate(0, 20%);
+			transform-origin: 52.6% 52.6%;
+			clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
+		}
+		#circles {
+			transform: scale(0.5);
+
+			transform-origin: 52.6% 52.6%;
+			opacity: 0;
+		}
+		#border-wrapper {
+			overflow: 0;
+			opacity: 0;
+			transform-origin: 52.6% 52.6%;
+			transform: scale(0.5);
+		}
+	}
+	&.init {
+		svg {
+			#border {
+				animation: 8s spin forwards infinite linear;
+			}
+			#mark {
+				// opacity: 1;
+				transition: 1s all 1s ease-in-out;
+				clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+				transform: translate(0, 0);
+			}
+			#circles {
+				opacity: 1;
+				transition: all 2s ease-in-out;
+				transform: scale(1);
+			}
+			#border-wrapper {
+				opacity: 1;
+				transition: all 2s ease-in-out;
+				transform: scale(1);
+			}
+		}
+	}
+	&.ready {
+		svg {
+			#mark {
+				// opacity: 1;
+				transition: 1s all 0s ease-in-out;
+				transform: translate(0, 20%);
+				transform-origin: 52.6% 52.6%;
+				clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
+			}
+			#circles {
+				opacity: 0;
+				transition: 2s all 0.5s ease-in-out;
+				transform: scale(0.5);
+			}
+			#border-wrapper {
+				opacity: 0;
+				transition: 2s all 0.5s ease-in-out;
+				transform: scale(0.5);
+			}
+		}
+	}
+}
+
+@keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
