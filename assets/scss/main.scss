@@ -15,12 +15,16 @@ body {
 	line-height: 38px;
 	color: #180e01;
 	font-weight: 500;
+	height: 100vh;
+	overflow: hidden;
 }
 section {
 	opacity: 0;
 }
 body {
 	&.ready {
+		overflow: visible;
+
 		section {
 			transition: 2s all 2s;
 
