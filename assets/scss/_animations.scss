@@ -80,6 +80,13 @@
 	}
 }
 
+.spinning-logo {
+	#border {
+		transform-origin: 52.6% 52.6%;
+		animation: 8s spin forwards infinite linear;
+	}
+}
+
 @keyframes spin {
 	to {
 		transform: rotate(360deg);

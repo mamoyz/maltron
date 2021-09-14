@@ -18,18 +18,11 @@ body {
 	height: 100vh;
 	overflow: hidden;
 }
-section {
-	opacity: 0;
-}
+
 body {
 	&.ready {
 		overflow: visible;
-
-		section {
-			transition: 2s all 2s;
-
-			opacity: 1;
-		}
+		height: auto;
 	}
 }
 * {
@@ -60,6 +53,8 @@ strong {
 		img {
 			width: 100%;
 		}
+		opacity: 0;
+		transform: translate(0, 5%);
 	}
 	.hero-bg {
 		position: relative;
@@ -73,9 +68,15 @@ strong {
 			background-size: cover;
 			background-position: 50% 50%;
 			background-repeat: no-repeat;
+			clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
+			opacity: 0;
+			transform: translate(0, 5%);
 		}
 	}
 	.hero-title {
+		clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
+		opacity: 0;
+		transform: translate(0, 5%);
 		text-align: center;
 
 		h1 {
@@ -89,6 +90,27 @@ strong {
 			span {
 				letter-spacing: -30px;
 			}
+		}
+	}
+	&.init {
+		.hero-logo {
+			opacity: 1;
+			transform: translate(0, 0);
+			transition: 1s all 1.6s;
+		}
+		.hero-bg {
+			.bg {
+				transition: 0.8s all 1s;
+				clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+				opacity: 1;
+				transform: translate(0, 0);
+			}
+		}
+		.hero-title {
+			transition: 0.8s all 2s;
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+			opacity: 1;
+			transform: translate(0, 0);
 		}
 	}
 }
@@ -109,18 +131,44 @@ strong {
 			font-size: 40px;
 			line-height: 40px;
 			letter-spacing: 2.5px;
+			clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+			opacity: 0;
 		}
-		img {
+		svg {
 			width: 256px;
+			height: 256px;
+			opacity: 0;
+			transform: scale(0.5);
 		}
 	}
 	.about-right {
+		opacity: 0;
+		clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
 		flex: 0 0 calc(100% - 450px);
 		p {
 			margin: 0 0 35px 0;
 			line-height: 34px;
 			font-size: 29px;
 			letter-spacing: 1.5px;
+		}
+	}
+	&.init {
+		.about-left {
+			h2 {
+				opacity: 1;
+				clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+				transition: 0.8s all 0s;
+			}
+			svg {
+				transform: scale(1);
+				opacity: 1;
+				transition: 0.8s all 0.4s;
+			}
+		}
+		.about-right {
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+			opacity: 1;
+			transition: 0.8s all 0.8s;
 		}
 	}
 }
@@ -133,11 +181,14 @@ strong {
 		background: url("../images/pattern.png") repeat;
 		text-align: center;
 		background-size: 422px 422px;
-		background-position: 30px 0;
+		background-position: 30px 100%;
+		opacity: 0;
 		p {
 			font-size: 22px;
 			letter-spacing: 10px;
 			margin: 0;
+			opacity: 0;
+			transform: translate(0, 5%);
 		}
 		h2 {
 			font-weight: bold;
@@ -148,10 +199,34 @@ strong {
 			font-size: 44px;
 			letter-spacing: 4px;
 			line-height: 70px;
+			opacity: 0;
+			transform: translate(0, 5%);
 		}
 		img {
 			width: 195px;
 			height: auto;
+			opacity: 0;
+			transform: translate(0, 5%);
+		}
+		&.init {
+			background-position: 30px 0;
+			transition: all 1s;
+			opacity: 1;
+			p {
+				transition: 0.5s all 0.7s;
+				opacity: 1;
+				transform: translate(0, 0);
+			}
+			h2 {
+				transition: 0.5s all 1s;
+				opacity: 1;
+				transform: translate(0, 0);
+			}
+			img {
+				transition: 0.5s all 1.3s;
+				opacity: 1;
+				transform: translate(0, 0);
+			}
 		}
 	}
 }
@@ -163,10 +238,29 @@ footer {
 		text-align: center;
 		img {
 			width: 120px;
+			opacity: 0;
+			transform: translate(0, 5%);
 		}
 		p {
 			margin: 10px auto 0;
 			font-size: 20px;
+			opacity: 0;
+			transform: translate(0, 5%);
+		}
+	}
+
+	&.init {
+		.wrapper {
+			img {
+				opacity: 1;
+				transform: translate(0, 0);
+				transition: 0.5s all 0.3s;
+			}
+			p {
+				opacity: 1;
+				transform: translate(0, 0);
+				transition: 0.5s all 0.6s;
+			}
 		}
 	}
 }
@@ -241,8 +335,9 @@ footer {
 				line-height: 4.56vw;
 				letter-spacing: 0.5vw;
 			}
-			img {
+			svg {
 				width: 22.14vw;
+				height: 22.14vw;
 			}
 		}
 		.about-right {
@@ -266,7 +361,8 @@ footer {
 			background: url("../images/pattern.png") repeat;
 			text-align: center;
 			background-size: 30.86vw 30.86vw;
-			background-position: -2.21vw 0;
+			background-position: -2.21vw 100%;
+
 			p {
 				font-size: 2.34vw;
 				letter-spacing: 1.04vw;
@@ -285,6 +381,9 @@ footer {
 			}
 			img {
 				width: 18.88vw;
+			}
+			&.init {
+				background-position: -2.21vw 0;
 			}
 		}
 	}
@@ -354,8 +453,9 @@ footer {
 				line-height: 2.08vw;
 				letter-spacing: 0.13vw;
 			}
-			img {
+			svg {
 				width: 13.33vw;
+				height: 13.33vw;
 			}
 		}
 		.about-right {
@@ -375,7 +475,7 @@ footer {
 			padding-top: 13.8vw;
 			padding-bottom: 13.02vw;
 			background-size: 21.98vw 21.98vw;
-			background-position: 1.56vw 0;
+			background-position: 1.56vw 100%;
 			p {
 				font-size: 1.15vw;
 				letter-spacing: 0.52vw;
@@ -390,6 +490,9 @@ footer {
 			}
 			img {
 				width: 10.16vw;
+			}
+			&.init {
+				background-position: 1.56vw 0;
 			}
 		}
 	}
@@ -478,7 +581,7 @@ footer {
 			padding-top: 13.8vw;
 			padding-bottom: 13.02vw;
 			background-size: 21.98vw 21.98vw;
-			background-position: 1.56vw 0;
+			background-position: 1.56vw 100%;
 			p {
 				font-size: 1.6vw;
 				letter-spacing: 0.52vw;
@@ -493,6 +596,9 @@ footer {
 			}
 			img {
 				width: 10.16vw;
+			}
+			&.init {
+				background-position: 1.56vw 0;
 			}
 		}
 	}
