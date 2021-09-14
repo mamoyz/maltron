@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $(".intro").addClass("init");
-    let introTimeout = 0;
+    let introTimeout = 4000;
     let fetch = setInterval(() => {
         if (document.readyState == "complete") {
             clearInterval(fetch);
