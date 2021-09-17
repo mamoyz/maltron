@@ -23,15 +23,19 @@ $(document).ready(function () {
     }, 200);
     function initSlider() {
         let slides = $(".hero .hero-bg .bg").length;
-        let activeSlide = -1;
+        let i = 2;
         let sliderInterval = setInterval(() => {
-            (activeSlide == slides - 2) ? activeSlide = -1 : activeSlide++;
-            $(".hero .hero-bg .bg.active").removeClass("active");
-            setTimeout(() => {
-                $(".hero .hero-bg .bg").eq(activeSlide + 1).addClass("active");
-            }, 800);
+            if (i == slides + 1) {
+                i = 2;
+                $(".hero .hero-bg .bg:gt(0)").removeClass("active");
 
-        }, 4000);
+            }
+            i++;
+            setTimeout(() => {
+                $(".hero .hero-bg .bg:lt(" + (i - 1) + ")").addClass("active");
+                $(".hero .hero-bg .bg:gt(" + (i - 2) + ")").removeClass("active");
+            }, 100);
+        }, 5000);
     }
     $(window).scroll(function (e) {
         let winTop = $(window).scrollTop();
