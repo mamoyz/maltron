@@ -36,7 +36,7 @@
     <base href="/">-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;800;900&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
@@ -59,6 +59,15 @@
 </head>
 
 <body>
+    <div class="d-none">
+        <img src="./assets/images/sliders/MALTRON_Web_Slider_01-min.jpg" alt="preload">
+        <img src="./assets/images/sliders/MALTRON_Web_Slider_02-min.jpg" alt="preload">
+        <img src="./assets/images/sliders/MALTRON_Web_Slider_03-min.jpg" alt="preload">
+        <img src="./assets/images/sliders/MALTRON_Web_Slider_04-min.jpg" alt="preload">
+        <img src="./assets/images/sliders/MALTRON_Web_Slider_05-min.jpg" alt="preload">
+        <img src="./assets/images/sliders/MALTRON_Web_Slider_06-min.jpg" alt="preload">
+        <img src="./assets/images/sliders/MALTRON_Web_Slider_07-min.jpg" alt="preload">
+    </div>
 
     <div class="intro">
         <svg xmlns="http://www.w3.org/2000/svg" width="416.5" height="416.49" viewBox="0 0 416.5 416.49">
@@ -228,8 +237,22 @@
                 <img src="./assets/images/maltron-logo.png" alt="Maltron">
             </a>
             <div class="hero-bg">
-                <div class="bg" style="background-image: url('./assets/images/maltron-hero-bg.jpg');"></div>
+                <div class="bg" style="background-image: url('./assets/images/sliders/MALTRON_Web_Slider_01-min.jpg');">
+                </div>
+                <div class="bg" style="background-image: url('./assets/images/sliders/MALTRON_Web_Slider_02-min.jpg');">
+                </div>
+                <div class="bg" style="background-image: url('./assets/images/sliders/MALTRON_Web_Slider_03-min.jpg');">
+                </div>
+                <div class="bg" style="background-image: url('./assets/images/sliders/MALTRON_Web_Slider_04-min.jpg');">
+                </div>
+                <div class="bg" style="background-image: url('./assets/images/sliders/MALTRON_Web_Slider_05-min.jpg');">
+                </div>
+                <div class="bg" style="background-image: url('./assets/images/sliders/MALTRON_Web_Slider_06-min.jpg');">
+                </div>
+                <div class="bg" style="background-image: url('./assets/images/sliders/MALTRON_Web_Slider_07-min.jpg');">
+                </div>
             </div>
+
             <div class="hero-title">
                 <h1>MAKING<span>&nbsp;</span>SH!T<span>&nbsp;</span>HAPPEN.</h1>
             </div>
@@ -430,11 +453,37 @@
     <footer>
         <div class="container">
             <div class="wrapper">
-                <img src="./assets/images/MaltronLogo.svg" alt="">
-                <p>© COPYRIGHT MALTRON VENTURES MMXXI</p>
+                <div class="contact">
+                    <p>CONTACT</p>
+                    <h3>
+                        <a href="mailto:info@maltronventures.com">INFO@MALTRONVENTURES.COM</a>
+                    </h3>
+
+                </div>
+                <div class="footer-logos">
+                    <div class="logo">
+                        <img src="./assets/images/maltron-logo.png" alt="Maltron">
+                        <span>USA</span>
+                    </div>
+                    <div class="divider">
+                        <img src="./assets/images/chain-line-vertical.png" alt="">
+                    </div>
+                    <div class="logo">
+                        <img src="./assets/images/maltron-logo.png" alt="Maltron">
+                        <span>EUROPE</span>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>© COPYRIGHT MALTRON VENTURES MMXXI</p>
+                </div>
             </div>
         </div>
     </footer>
+    <script>
+        window.addEventListener("orientationchange", () => {
+                window.location.reload();
+            });
+    </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="./assets/js/main.js"></script>
