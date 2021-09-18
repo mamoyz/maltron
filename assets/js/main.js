@@ -39,7 +39,7 @@ $(document).ready(function () {
     }
     $(window).scroll(function (e) {
         let winTop = $(window).scrollTop();
-        let co = ($(window).innerWidth() / $(window).innerHeight() < 0.8) ? 0.7 : 0.5
+        let co = ($(window).innerWidth() / $(window).innerHeight() < 0.8) ? 0.7 : 0.65
         $.each($(".yz-animate"), function () {
             if (winTop + $(window).innerHeight() * co > $(this).offset().top) {
                 $(this).addClass("init");
