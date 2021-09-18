@@ -74,7 +74,7 @@ strong {
 			background-repeat: no-repeat;
 			clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
 			&.active {
-				animation: 1.2s slide 0s forwards;
+				animation: 2s slide 0s forwards;
 			}
 			@for $i from 1 through 20 {
 				&:nth-child(#{$i}) {
